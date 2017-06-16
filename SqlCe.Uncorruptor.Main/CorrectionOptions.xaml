@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SqlCe.Uncorruptor.Main.CorrectionOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="130" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Label Content="Option de réparation" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+            <RadioButton Margin="0,5" GroupName="choix"  Content="Supprimer les lignes corrompues" IsChecked="{Binding SupprimerLigneCorrompues, Mode=TwoWay}"/>
+            <RadioButton Margin="0,5" GroupName="choix"  Content="Réparer les lignes corrumpues" IsChecked="{Binding ReparerLigneCorrompues, Mode=TwoWay}"/>
+            <RadioButton Margin="0,5" GroupName="choix"  Content="Réparer toutes les lignes possible" IsChecked="{Binding ReparerTouteLigneCorrompues, Mode=TwoWay}"/>
+            <RadioButton Margin="0,5" GroupName="choix"  Content="Réparer tout ou rien" IsChecked="{Binding ReparerToutOuRien, Mode=TwoWay}"/>
+        </StackPanel>
+        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="2" Content="Ok" Margin="3" Width="100" Command="{Binding OnChoiceDone}"/>
+    </Grid>
+</UserControl>
